@@ -4,10 +4,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "dev:backend": "pnpm --filter backend start:dev",
-    "dev:frontend": "pnpm --filter frontend dev",
-    "build": "pnpm -r build"
+ "scripts": {
+    "dev": "pnpm --parallel --filter backend --filter frontend dev",
+    "dev:backend": "doppler run -- pnpm --filter backend start:dev",
+    "dev:frontend": "doppler run -- pnpm --filter frontend dev",
+
+    "build": "pnpm -r build",
+    "build:backend": "doppler run -- pnpm --filter backend build",
+    "build:frontend": "doppler run -- pnpm --filter frontend build",
+
+    "start:backend": "doppler run -- pnpm --filter backend start:prod",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+
+    "db:up": "doppler run -- docker compose  -f infrastructure/docker/compose.yaml up -d",
+    "db:down": "doppler run -- docker compose  -f infrastructure/docker/compose.yaml stop",
+    "db:logs": "doppler run -- docker compose  -f infrastructure/docker/compose.yaml logs -f postgres",
+    "db:status": "doppler run -- docker compose  -f infrastructure/docker/compose.yaml ps",
+    "db:shell": "doppler run -- docker compose  -f infrastructure/docker/compose.yaml exec postgres psql -U saas_app -d multi_tenant_saas"
   },
   "author": "",
   "license": "ISC",
