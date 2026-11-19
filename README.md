@@ -50,3 +50,9 @@ Start frontend:
 ## Project Status
 
 Initial project setup.
+
+## Setup environment variable
+
+---
+
+doppler configure set token=<token-string>
