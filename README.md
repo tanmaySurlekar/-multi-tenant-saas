@@ -1,58 +1,71 @@
-# Multi-Tenant SaaS
+# Project Vision: Hybrid Multi-Tenant SaaS Platform
 
-A full-stack multi-tenant SaaS application built to demonstrate
-backend engineering, tenant isolation, authentication,
-authorization, and scalable application architecture.
+## Overview
 
-## Technology Stack
+The goal of this project is to build a scalable, secure, hybrid multi-tenant SaaS platform using NestJS, TypeORM, PostgreSQL, and TypeScript.
 
-### Backend
+The initial implementation will focus on establishing a strong multi-tenant foundation with support for both shared and dedicated database architectures.
 
-- NestJS
-- TypeScript
-- PostgreSQL
+## Phase 1: Core Multi-Tenant SaaS Platform
 
-### Frontend
+The initial release will focus on:
 
-- React
-- TypeScript
-- Vite
+- Tenant and organization management.
+- Centralized user identity management.
+- Tenant memberships.
+- Authentication and authorization.
+- Role-Based Access Control (RBAC).
+- Shared database tenant isolation.
+- PostgreSQL Row-Level Security (RLS).
+- Dedicated tenant database support.
+- Database connection management.
+- Subscription management foundation.
+- Audit logging.
 
-### Development Tools
+The primary objective is to demonstrate backend engineering, database architecture, security, and practical system design.
 
-- pnpm workspaces
-- Docker
-- GitHub
+## Phase 2: Project Management and Ticketing Platform
 
-## Project Architecture
+Following completion of the initial platform and the planned job transition, the project will evolve into a multi-tenant project management and ticketing application inspired by products such as Trello and ClickUp.
 
-Monorepo containing independently managed frontend and backend applications.
+Potential features include:
 
-- `backend/` - NestJS API
-- `frontend/` - React application
-- `infrastructure/` - Local development infrastructure
-- `docs/` - Architecture documentation and decisions
+- Organization workspaces.
+- Project and ticket management.
+- Kanban boards.
+- Task assignment and tracking.
+- Comments and attachments.
+- Custom workflows and statuses.
+- Notifications and activity tracking.
+- Team collaboration.
+- Reporting and analytics.
 
-## Getting Started
+## Architectural Strategy
 
-Install dependencies:
+The initial platform will use a modular monolith architecture with clear boundaries between:
 
-    pnpm install
+- Identity and authentication.
+- Tenant management.
+- Membership and authorization.
+- Database management.
+- Subscription management.
+- Tenant-specific business functionality.
 
-Start backend:
+The architecture will be designed to support future project management and ticketing capabilities without requiring a fundamental redesign of the tenant isolation or identity layers.
 
-    pnpm dev:backend
+## Development Philosophy
 
-Start frontend:
+The project will prioritize:
 
-    pnpm dev:frontend
+1. Strong fundamentals over unnecessary complexity.
+2. Secure tenant isolation.
+3. Production-oriented database design.
+4. Practical system design implementation.
+5. Automated testing and maintainability.
+6. Incremental infrastructure adoption.
 
-## Project Status
+Additional technologies such as Redis, message queues, and real-time communication will be introduced when justified by actual application requirements.
 
-Initial project setup.
+## Long-Term Objective
 
-## Setup environment variable
-
----
-
-doppler configure set token=<token-string>
+Build a production-oriented multi-tenant SaaS foundation that can evolve into a full-fledged project management and ticketing platform while serving as a backend engineering portfolio project.
