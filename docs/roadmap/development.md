@@ -6,10 +6,7 @@
 
 ---
 
----
-
 1. Backend foundation
-   Starting now
    - TypeORM installation
    - NestJS database integration
    - Doppler configuration
